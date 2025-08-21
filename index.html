@@ -64,6 +64,7 @@
       text-decoration: none;
       border-radius: 5px;
       font-weight: bold;
+      cursor: pointer;
     }
 
     footer {
@@ -71,6 +72,23 @@
       font-size: 0.9em;
       color: #aaa;
       margin-top: 3em;
+    }
+
+    /* 進捗バー */
+    .progress {
+      width: 100%;
+      background-color: #eee;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-top: 0.5em;
+    }
+    .progress-bar {
+      height: 20px;
+      background-color: #2ecc71;
+      text-align: center;
+      color: white;
+      font-size: 0.8em;
+      line-height: 20px;
     }
   </style>
 </head>
@@ -81,29 +99,45 @@
   </header>
 
   <div class="container">
-    <!-- アプリ2 -->
+    <!-- アプリ1 -->
     <div class="app">
-      <img src="https://via.placeholder.com/100" alt="アプリ1アイコン">
+      <img src="images/uchi-neko.png" alt="ウチ猫冒険記アイコン">
       <div class="app-details">
         <h2>ウチ猫冒険記</h2>
         <p>メトロイドヴァニア風のねこ冒険ゲーム。スタミナが切れると動けないスリル！</p>
-        <a class="btn" href="https://apps.apple.com/jp/app/your-app-id" target="_blank">App Storeで見る</a>
-        <!-- ウチ猫冒険記 のブロック内に追加 -->
+
+        <!-- 進捗バー -->
+        <div class="progress">
+          <div class="progress-bar" style="width:60%">60%</div>
+        </div>
+
+        <!-- ワクワクボタン -->
         <button class="btn wakuwaku" data-app="uchi-neko">ワクワク！</button>
         <span class="thanks" style="display:none; color:#e67e22; font-weight:bold;">ありがとうございます！</span>
+        <br><br>
+
+        <a class="btn" href="https://apps.apple.com/jp/app/your-app-id" target="_blank">App Storeで見る</a>
       </div>
     </div>
 
-    <!-- アプリ1 -->
+    <!-- アプリ2 -->
     <div class="app">
-      <img src="https://via.placeholder.com/100" alt="アプリ2アイコン">
+      <img src="images/irasutoya-escape.png" alt="いらすとやからの脱出アイコン">
       <div class="app-details">
         <h2>いらすとやからの脱出</h2>
         <p>かわいい素材で作られた謎解き脱出ゲーム。ひなたと一緒に部屋を抜け出せ！</p>
-        <a class="btn" href="https://apps.apple.com/jp/app/6747669718" target="_blank">App Storeで見る</a>
-        <!-- いらすとやからの脱出 のブロック内に追加 -->
+
+        <!-- 進捗バー -->
+        <div class="progress">
+          <div class="progress-bar" style="width:90%">90%</div>
+        </div>
+
+        <!-- ワクワクボタン -->
         <button class="btn wakuwaku" data-app="irasutoya-escape">ワクワク！</button>
         <span class="thanks" style="display:none; color:#e67e22; font-weight:bold;">ありがとうございます！</span>
+        <br><br>
+
+        <a class="btn" href="https://apps.apple.com/jp/app/6747669718" target="_blank">App Storeで見る</a>
       </div>
     </div>
   </div>
@@ -111,48 +145,43 @@
   <footer>
     &copy; 2025 noburick realm | <a href="mailto:contact.nr.6@gmail.com">お問い合わせ</a>
   </footer>
+
+  <!-- ワクワクボタンスクリプト -->
   <script>
-  // === あなたのGASウェブアプリURLに置き換え ===
-  const WAKUWAKU_ENDPOINT = 'https://script.google.com/macros/s/XXXXXXXXXXXXXXXX/exec';
+    const WAKUWAKU_ENDPOINT = 'https://script.google.com/macros/s/XXXXXXXXXXXXXXXX/exec'; // あなたのGAS URLに置換
 
-  // 二重押し防止 & 簡易な再押し制限（ブラウザ単位。厳密ではない）
-  function alreadyVoted(appId) {
-    return localStorage.getItem('wakuwaku_' + appId) === '1';
-  }
-  function markVoted(appId) {
-    localStorage.setItem('wakuwaku_' + appId, '1');
-  }
-
-  async function sendWakuwaku(appId) {
-    const res = await fetch(WAKUWAKU_ENDPOINT, {
-      method: 'POST',
-      headers: {'Content-Type':'application/json'},
-      body: JSON.stringify({ appId })
-    });
-    // 失敗しても訪問者にはエラーを見せない（静かに無視でOK）
-    return res.ok;
-  }
-
-  document.addEventListener('click', async (e) => {
-    const btn = e.target.closest('.wakuwaku');
-    if (!btn) return;
-
-    const appId = btn.dataset.app;
-    const thanks = btn.nextElementSibling;
-
-    btn.disabled = true;
-
-    if (!alreadyVoted(appId)) {
-      try { await sendWakuwaku(appId); } catch (_) {}
-      markVoted(appId);
+    function alreadyVoted(appId) {
+      return localStorage.getItem('wakuwaku_' + appId) === '1';
+    }
+    function markVoted(appId) {
+      localStorage.setItem('wakuwaku_' + appId, '1');
     }
 
-    // UI更新（カウントは非表示のまま）
-    btn.textContent = 'ワクワク済み';
-    if (thanks) thanks.style.display = 'inline';
+    async function sendWakuwaku(appId) {
+      await fetch(WAKUWAKU_ENDPOINT, {
+        method: 'POST',
+        headers: {'Content-Type':'application/json'},
+        body: JSON.stringify({ appId })
+      }).catch(() => {});
+    }
 
-    // お好みで数秒後にボタンをフェードアウト、とかも可能
-  });
-</script>
+    document.addEventListener('click', async (e) => {
+      const btn = e.target.closest('.wakuwaku');
+      if (!btn) return;
+
+      const appId = btn.dataset.app;
+      const thanks = btn.nextElementSibling;
+
+      btn.disabled = true;
+
+      if (!alreadyVoted(appId)) {
+        await sendWakuwaku(appId);
+        markVoted(appId);
+      }
+
+      btn.textContent = 'ワクワク済み';
+      if (thanks) thanks.style.display = 'inline';
+    });
+  </script>
 </body>
 </html>
