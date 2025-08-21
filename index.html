@@ -111,5 +111,48 @@
   <footer>
     &copy; 2025 noburick realm | <a href="mailto:contact.nr.6@gmail.com">お問い合わせ</a>
   </footer>
+  <script>
+  // === あなたのGASウェブアプリURLに置き換え ===
+  const WAKUWAKU_ENDPOINT = 'https://script.google.com/macros/s/XXXXXXXXXXXXXXXX/exec';
+
+  // 二重押し防止 & 簡易な再押し制限（ブラウザ単位。厳密ではない）
+  function alreadyVoted(appId) {
+    return localStorage.getItem('wakuwaku_' + appId) === '1';
+  }
+  function markVoted(appId) {
+    localStorage.setItem('wakuwaku_' + appId, '1');
+  }
+
+  async function sendWakuwaku(appId) {
+    const res = await fetch(WAKUWAKU_ENDPOINT, {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({ appId })
+    });
+    // 失敗しても訪問者にはエラーを見せない（静かに無視でOK）
+    return res.ok;
+  }
+
+  document.addEventListener('click', async (e) => {
+    const btn = e.target.closest('.wakuwaku');
+    if (!btn) return;
+
+    const appId = btn.dataset.app;
+    const thanks = btn.nextElementSibling;
+
+    btn.disabled = true;
+
+    if (!alreadyVoted(appId)) {
+      try { await sendWakuwaku(appId); } catch (_) {}
+      markVoted(appId);
+    }
+
+    // UI更新（カウントは非表示のまま）
+    btn.textContent = 'ワクワク済み';
+    if (thanks) thanks.style.display = 'inline';
+
+    // お好みで数秒後にボタンをフェードアウト、とかも可能
+  });
+</script>
 </body>
 </html>
