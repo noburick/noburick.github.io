@@ -148,49 +148,31 @@
   </footer>
 
   <!-- ワクワクボタンスクリプト -->
-  <script>
+<script>
+  const WAKUWAKU_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyApOOP73_6ldWAPuDqmH8PQwO2gdUA6QXWTlpBdJ7ZPpZ9sRldOCY2En7iF08ZUQH4/exec'; // /exec!
+  const SECRET = 'sjd8f7sd98f7sd89f';
 
-    const WAKUWAKU_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyApOOP73_6ldWAPuDqmH8PQwO2gdUA6QXWTlpBdJ7ZPpZ9sRldOCY2En7iF08ZUQH4/exec'; // あなたのGAS URLに置換
-    const SECRET = 'sjd8f7sd98f7sd89f'; // GASと同じ
-    async function sendWakuwaku(appId) {
-    // ← ヘッダを付けずに text/plain の「シンプルPOST」にする（プリフライト回避）
+  async function sendWakuwaku(appId) {
+    // ヘッダは付けない（Content-Typeも付けない）
     await fetch(WAKUWAKU_ENDPOINT, {
       method: 'POST',
       body: JSON.stringify({ appId, token: SECRET })
     }).catch(()=>{});
- 　 }
-    function alreadyVoted(appId) {
-      return localStorage.getItem('wakuwaku_' + appId) === '1';
-    }
-    function markVoted(appId) {
-      localStorage.setItem('wakuwaku_' + appId, '1');
-    }
+  }
 
-    async function sendWakuwaku(appId) {
-      await fetch(WAKUWAKU_ENDPOINT, {
-        method: 'POST',
-        headers: {'Content-Type':'application/json'},
-        body: JSON.stringify({ appId })
-      }).catch(() => {});
-    }
+  document.addEventListener('click', async (e) => {
+    const btn = e.target.closest('.wakuwaku');
+    if (!btn) return;
+    const appId = btn.dataset.app;
+    const thanks = btn.nextElementSibling;
 
-    document.addEventListener('click', async (e) => {
-      const btn = e.target.closest('.wakuwaku');
-      if (!btn) return;
+    btn.disabled = true;
+    await sendWakuwaku(appId);
+    localStorage.setItem('wakuwaku_' + appId, '1');
 
-      const appId = btn.dataset.app;
-      const thanks = btn.nextElementSibling;
-
-      btn.disabled = true;
-
-      if (!alreadyVoted(appId)) {
-        await sendWakuwaku(appId);
-        markVoted(appId);
-      }
-
-      btn.textContent = 'ワクワク済み';
-      if (thanks) thanks.style.display = 'inline';
-    });
-  </script>
+    btn.textContent = 'ワクワク済み';
+    if (thanks) thanks.style.display = 'inline';
+  });
+</script>
 </body>
 </html>
