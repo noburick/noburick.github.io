@@ -149,8 +149,17 @@
 
   <!-- ワクワクボタンスクリプト -->
   <script>
-    const WAKUWAKU_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzikm8BybpW2lDJ6pwQuwBlf2PPS1CtUmHqqOCZ6Xo4ro_xbVaoa6AKX4H6XWqZP3DE/exec'; // あなたのGAS URLに置換
 
+    const WAKUWAKU_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzikm8BybpW2lDJ6pwQuwBlf2PPS1CtUmHqqOCZ6Xo4ro_xbVaoa6AKX4H6XWqZP3DE/exec'; // あなたのGAS URLに置換
+    const SECRET = 'sjd8f7sd98f7sd89f'; // GASと同じ
+
+    async function sendWakuwaku(appId) {
+    await fetch(WAKUWAKU_ENDPOINT, {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({ appId, token: SECRET })
+    }).catch(()=>{});
+  }
     function alreadyVoted(appId) {
       return localStorage.getItem('wakuwaku_' + appId) === '1';
     }
