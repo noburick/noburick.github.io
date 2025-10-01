@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ウチ猫冒険記 - ゲーム紹介 | Noburick Realm</title>
+  <meta name="description" content="ウチ猫たちとカツオブシを探す横スクロール冒険。ジャンプ＆探索、スタミナ管理、ほのぼのBGM。iOS/Android配信予定。">
+
+  <!-- OGP -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ウチ猫冒険記 - ゲーム紹介">
+  <meta property="og:description" content="ウチ猫たちとカツオブシを探す横スクロール冒険。">
+  <meta property="og:url" content="https://noburick.github.io/games/uchineko/">
+  <meta property="og:image" content="https://noburick.github.io/games/uchineko/img/hero.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <style>
+    :root { --max: 1100px; }
+    html,body { margin:0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans JP", "Yu Gothic", sans-serif; line-height:1.6; }
+    body { color:#1a1a1a; background:#fff; }
+    @media (prefers-color-scheme: dark) {
+      body { color:#eee; background:#111; }
+      .card { background:#161616; border-color:#2a2a2a; }
+      .muted { color:#bdbdbd; }
+      a { color:#8ab4ff; }
+    }
+    header { padding:24px 16px; border-bottom:1px solid #eaeaea; }
+    .wrap { max-width:var(--max); margin:0 auto; }
+    nav a { margin-right:16px; text-decoration:none; }
+    .hero { display:grid; grid-template-columns: 1fr; gap:16px; padding:28px 16px; }
+    .hero img { width:100%; border-radius:12px; object-fit:cover; }
+    .title { font-size:clamp(26px, 4vw, 40px); margin:0; }
+    .subtitle { margin:8px 0 0; color:#666; }
+    .btns { display:flex; flex-wrap:wrap; gap:12px; margin-top:12px; }
+    .btn { display:inline-block; padding:10px 16px; border:1px solid #ddd; border-radius:10px; text-decoration:none; }
+    .grid { display:grid; grid-template-columns: 1fr; gap:20px; padding:16px; }
+    @media (min-width: 900px) {
+      .hero { grid-template-columns: 1.1fr 1fr; }
+      .grid { grid-template-columns: 1fr 1fr; }
+    }
+    h2 { margin:24px 0 8px; }
+    .card { border:1px solid #eaeaea; border-radius:12px; padding:16px; background:#fafafa; }
+    .muted { color:#666; }
+    .kvs { display:grid; grid-template-columns: repeat(auto-fill,minmax(220px,1fr)); gap:12px; }
+    .kvs img { width:100%; border-radius:10px; }
+    .badge { font-size:12px; padding:2px 8px; border:1px solid #ddd; border-radius:999px; display:inline-block; margin-right:6px; }
+    footer { padding:40px 16px; border-top:1px solid #eaeaea; margin-top:40px; }
+    details { border:1px dashed #ddd; border-radius:10px; padding:12px; }
+    details > summary { cursor:pointer; font-weight:600; }
+    .changelog li { margin-bottom:6px; }
+    .video { aspect-ratio: 16/9; width:100%; border:none; border-radius:12px; }
+    .spec-table { width:100%; border-collapse: collapse; }
+    .spec-table th, .spec-table td { border-bottom:1px solid #eaeaea; padding:8px; text-align:left; }
+    .section { margin-top:24px; }
+  </style>
+
+  <!-- 構造化データ（VideoGame） -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"VideoGame",
+    "name":"ウチ猫冒険記",
+    "url":"https://noburick.github.io/games/uchineko/",
+    "operatingSystem":["iOS","Android"],
+    "applicationCategory":"GameApplication",
+    "genre":["横スクロール","アドベンチャー"],
+    "description":"ウチ猫たちとカツオブシを探す、ジャンプ＆探索の横スクロール冒険ゲーム。",
+    "author":{"@type":"Organization","name":"Noburick Realm"},
+    "publisher":{"@type":"Organization","name":"Noburick Realm"},
+    "image":"https://noburick.github.io/games/uchineko/img/hero.jpg",
+    "screenshot":[
+      "https://noburick.github.io/games/uchineko/img/ss1.jpg",
+      "https://noburick.github.io/games/uchineko/img/ss2.jpg"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <nav>
+        <a href="/">🏠 Home</a>
+        <a href="/#games">🎮 Games</a>
+        <a href="/#contact">✉ Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <img src="./img/hero.jpg" alt="ウチ猫冒険記 キービジュアル">
+      <div>
+        <h1 class="title">ウチ猫冒険記</h1>
+        <p class="subtitle">ウチ猫たちとカツオブシを探す横スクロール冒険</p>
+        <div class="btns">
+          <!-- 実ストアURLに差し替え -->
+          <a class="btn" href="#" aria-label="App Store"> App Store</a>
+          <a class="btn" href="#" aria-label="Google Play">▶ Google Play</a>
+          <a class="btn" href="#trailer">🎬 トレーラー</a>
+          <a class="btn" href="#privacy">🔒 プライバシー</a>
+        </div>
+        <p class="muted">対応: iOS / Android ・ プレイ時間: 15〜60分 ・ 価格: 広告つき無料</p>
+        <div>
+          <span class="badge">#横スクロール</span>
+          <span class="badge">#猫</span>
+          <span class="badge">#スタミナ</span>
+          <span class="badge">#まったりBGM</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h2>ゲーム概要</h2>
+        <p>プレイヤーは<strong>レン/チノ/スピ</strong>など個性の違う猫を切り替えながら、庭→森→港町→砂浜→漁師の小屋…と進む横スクロール冒険に挑みます。スタミナが切れると動けなくなるので、落ち着いて探索ルートを見極めてね。</p>
+        <table class="spec-table">
+          <tr><th>操作</th><td>左右移動 / ジャンプ / キャラ切替</td></tr>
+          <tr><th>特徴</th><td>軽い物理挙動 / サクッと探索 / スクショ映え</td></tr>
+          <tr><th>端末</th><td>iPhone / iPad / Android</td></tr>
+          <tr><th>収益</th><td>インタースティシャル/バナー広告（控えめ）</td></tr>
+        </table>
+      </article>
+
+      <aside class="card">
+        <h2>スクリーンショット</h2>
+        <div class="kvs">
+          <a href="./img/ss1.jpg" target="_blank" rel="noopener"><img src="./img/ss1.jpg" alt="スクリーンショット1"></a>
+          <a href="./img/ss2.jpg" target="_blank" rel="noopener"><img src="./img/ss2.jpg" alt="スクリーンショット2"></a>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section" id="trailer">
+      <h2>トレーラー</h2>
+      <!-- YouTube埋め込み例（ID差し替え）-->
+      <iframe class="video" src="https://www.youtube.com/embed/VIDEO_ID?rel=0" title="YouTube video" allowfullscreen></iframe>
+      <!-- もしくは <video controls class="video" src="./video/trailer.mp4"></video> -->
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h2>遊び方のコツ</h2>
+        <ul>
+          <li>壁に軽く引っかかる摩擦を使って<strong>“ずり落ち”</strong>でタイミング調整。</li>
+          <li>スタミナ温存のため、無駄ジャンプ厳禁。</li>
+          <li>各猫の得意分野（ジャンプ力/攻撃可/省エネ）を<strong>区間ごとに使い分け</strong>る。</li>
+        </ul>
+      </article>
+      <aside class="card">
+        <h2>よくある質問</h2>
+        <details>
+          <summary>広告は多い？</summary>
+          <p>ステージ区切りで短く、誤タップを誘う配置は避けています。</p>
+        </details>
+        <details>
+          <summary>コントローラ対応は？</summary>
+          <p>初期はタッチ操作のみ。要望が多ければ検討します。</p>
+        </details>
+      </aside>
+    </section>
+
+    <section class="section card">
+      <h2>更新ログ</h2>
+      <ul class="changelog">
+        <li><strong>v1.0.0</strong>（2025-10-01）: 初版リリース。</li>
+        <li><strong>v1.0.1</strong>: 演出微調整、バグ修正。</li>
+      </ul>
+    </section>
+
+    <section class="section card" id="privacy">
+      <h2>プライバシーポリシー（要点）</h2>
+      <p>本アプリは広告配信のために広告ID等を利用します。個人を特定する情報は収集しません。詳細は <a href="/privacy">こちら</a>。</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p class="muted">© Noburick Realm — Cats rule the realm 🐾</p>
+    </div>
+  </footer>
+</body>
+</html>
