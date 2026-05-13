@@ -3,361 +3,84 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>noburick realm </title>
-  <style>
-    body {
-      font-family: 'Helvetica Neue', sans-serif;
-      background-color: #f9f9f9;
-      margin: 0;
-      padding: 0;
-      color: #333;
-    }
-
-    header {
-      background-color: #2c3e50;
-      color: white;
-      padding: 1em;
-      text-align: center;
-    }
-
-    h1 { margin: 0.2em 0; }
-
-    .container {
-      max-width: 960px;
-      margin: auto;
-      padding: 2em;
-    }
-
-    .app {
-      background-color: white;
-      border-radius: 8px;
-      padding: 1.5em;
-      margin-bottom: 1.5em;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      display: flex;
-      align-items: center;
-      gap: 1em;
-    }
-
-    .app img {
-      width: 100px;
-      height: 100px;
-      border-radius: 12px;
-      object-fit: cover;
-      background: #eee;
-      flex-shrink: 0;
-    }
-
-    .app-details { flex-grow: 1; }
-
-    .app h2 {
-      margin-top: 0;
-      margin-bottom: 0.3em;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 0.5em 1em;
-      background-color: #3498db;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
-      cursor: pointer;
-      border: 0;
-    }
-
-    .btn.secondary {
-      background-color: #34495e;
-    }
-
-    .btn.ghost {
-      background-color: transparent;
-      color: #3498db;
-      border: 1px solid #3498db;
-    }
-
-    footer {
-      text-align: center;
-      font-size: 0.9em;
-      color: #aaa;
-      margin-top: 3em;
-      padding: 2em 1em;
-    }
-
-    /* 進捗バー */
-    .progress {
-      width: 100%;
-      background-color: #eee;
-      border-radius: 8px;
-      overflow: hidden;
-      margin-top: 0.5em;
-    }
-    .progress-bar {
-      height: 20px;
-      background-color: #2ecc71;
-      text-align: center;
-      color: white;
-      font-size: 0.8em;
-      line-height: 20px;
-    }
-
-    .muted { color: #666; font-size: 0.95em; }
-
-    /* Support section */
-    .section {
-      background: white;
-      border-radius: 8px;
-      padding: 1.5em;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.08);
-      margin-top: 2em;
-    }
-    .section h2 { margin-top: 0; }
-    .faq details {
-      border-top: 1px solid #eee;
-      padding: 0.8em 0;
-    }
-    .faq details:first-child { border-top: 0; }
-    .faq summary { cursor: pointer; font-weight: bold; }
-    .pill {
-      display: inline-block;
-      padding: 0.2em 0.6em;
-      border-radius: 999px;
-      background: #eef6ff;
-      color: #2c3e50;
-      font-size: 0.85em;
-      margin-left: 0.5em;
-    }
-    .links a { margin-right: 0.8em; }
-
-    /* Anchor offset for fixed header (not used), still nice */
-    .anchor { scroll-margin-top: 20px; }
-  </style>
+  <title>ねことも！ポモドーロ | 公式ホームページ</title>
+  <meta name="description" content="かわいい猫と暖炉に癒やされながら集中する、スマホ向けタイマーアプリ『ねことも！ポモドーロ』公式ホームページ。">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>noburick realm<br>Step Insde</h1>
-    <p>楽しく遊べるコンテンツを制作中</p>
-    <p>興味のあるタイトルのワクワクを押してみてね！</p>
-    <p class="links">
-    </p>
+  <header class="hero" id="top">
+    <div class="hero__content">
+      <p class="hero__eyebrow">猫といっしょに、あったか集中タイム。</p>
+      <h1>ねことも！ポモドーロ</h1>
+      <p class="hero__lead">暖炉のゆらぎと、かわいい猫たちに癒やされながら、25分の集中習慣をはじめよう。</p>
+      <div class="hero__cta">
+        <a class="button button--primary" href="#download">今すぐダウンロード</a>
+        <a class="button button--ghost" href="#features">主な機能を見る</a>
+      </div>
+    </div>
+    <img src="assets/hero-placeholder.png" alt="ねことも！ポモドーロのヒーロー画像（仮）" class="hero__image">
   </header>
 
-  <div class="container">
+  <main>
+    <section class="section" id="about">
+      <h2>アプリ概要</h2>
+      <p>『ねことも！ポモドーロ』は、ポモドーロ・テクニックをやさしく続けられる集中サポートアプリです。作業中は暖炉の音と猫の見守り演出でほっとひと息、休憩時間は猫とのふれあいで気分転換できます。</p>
+      <img src="assets/app-overview-placeholder.png" alt="アプリ概要画像（仮）" class="section__image">
+    </section>
 
-    <!-- めでぃーく！AED! -->
-    <div class="app" id="app-medic-aed">
-      <img src="" alt="">
-      <div class="app-details">
-        <h2>めでぃーく！AED!</h2>
-        <p>歩く楽しさと身の回りのAEDの認知をテーマに作成予定です。リアルとゲーム要素を融合させたアプリを計画中です。</p>
-
-        <div class="progress-wrap">
-          <span class="progress-label">開発進捗</span>
-          <div class="progress">
-            <div class="progress-bar" style="width:5%">5%</div>
-          </div>
-        </div>
-
-        <div style="margin-top:0.8em;">
-          <button class="btn wakuwaku" data-app="medic_aed">ワクワクを送る！</button>
-          <span class="thanks" style="display:none; color:#e67e22; font-weight:bold;">ありがとうございます！</span>
-        </div>
-
-        <div style="margin-top:0.9em;">
-          <a class="btn" href="https://apps.apple.com/jp/app/your-app-id" target="_blank" rel="noopener">App Storeで見る</a>
-          <a class="btn secondary" href="#support">サポート</a>
-        </div>
-
-        <p class="muted" style="margin-top:0.8em;">
-          不具合/要望は「サポート」から連絡できます。
-        </p>
-      </div>
-    </div>
-
-    <!-- ウチ猫冒険記 -->
-    <div class="app" id="app-uchi-neko">
-      <img src="uchi-neko.png" alt="ウチ猫冒険記アイコン">
-      <div class="app-details">
-        <h2>ウチ猫冒険記</h2>
-        <p>横スクロール2Dアクションのねこ冒険ゲーム。スタミナが切れると動けないスリル！(※仕様は変更になる可能性もあります。)</p>
-
-        <div class="progress-wrap">
-          <span class="progress-label">開発進捗</span>
-          <div class="progress">
-            <div class="progress-bar" style="width:70%">70%</div>
-          </div>
-        </div>
-
-        <div style="margin-top:0.8em;">
-          <button class="btn wakuwaku" data-app="uchi-neko">ワクワクを送る！</button>
-          <span class="thanks" style="display:none; color:#e67e22; font-weight:bold;">ありがとうございます！</span>
-        </div>
-
-        <div style="margin-top:0.9em;">
-          <a class="btn" href="https://apps.apple.com/jp/app/your-app-id" target="_blank" rel="noopener">App Storeで見る</a>
-          <a class="btn secondary" href="#support">サポート</a>
-        </div>
-
-        <p class="muted" style="margin-top:0.8em;">
-          不具合/要望は「サポート」から連絡できます。
-        </p>
-      </div>
-    </div>
-
-    <!-- いらすとやからの脱出 -->
-    <div class="app" id="app-irasutoya-escape">
-      <img src="irasutoya-escape.png" alt="いらすとやからの脱出アイコン">
-      <div class="app-details">
-        <h2>いらすとやからの脱出 for iOS</h2>
-        <p>かわいい素材で作られた謎解き脱出ゲーム。ひなたと一緒に部屋を抜け出せ！</p>
-
-        <div class="progress-wrap">
-          <span class="progress-label">開発進捗</span>
-          <div class="progress">
-            <div class="progress-bar" style="width:100%">100%</div>
-          </div>
-        </div>
-
-        <div style="margin-top:0.8em;">
-          <button class="btn wakuwaku" data-app="irasutoya-escape">ワクワクを送る！</button>
-          <span class="thanks" style="display:none; color:#e67e22; font-weight:bold;">ありがとうございます！</span>
-        </div>
-
-        <div style="margin-top:0.9em;">
-          <a class="btn" href="https://apps.apple.com/jp/app/6747669718" target="_blank" rel="noopener">App Storeで見る</a>
-          <a class="btn secondary" href="#support">サポート</a>
-        </div>
-
-        <p class="muted" style="margin-top:0.8em;">
-          不具合/要望は「サポート」から連絡できます。
-        </p>
-      </div>
-    </div>
-
-    <!-- Support Section -->
-    <div class="section anchor" id="support">
-      <h2>サポート / お問い合わせ <span class="pill">App Store用</span></h2>
-      <p class="muted">
-        アプリの不具合報告・ご要望・お問い合わせはこちらからどうぞ。通常、数日以内に返信します。
-      </p>
-
-      <p>
-        <a class="btn" href="mailto:contact.nr.6@gmail.com?subject=%5Bnoburick%20realm%5D%20%E3%82%A2%E3%83%97%E3%83%AA%E3%81%AE%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B">メールで問い合わせる</a>
-      </p>
-
-      <h3>不具合報告テンプレ</h3>
-      <p class="muted">コピペして送ってくれると助かります。</p>
-      <pre style="background:#f5f5f5; padding:1em; border-radius:8px; overflow:auto;">
-■ 対象アプリ：
-■ 端末：
-■ iOSバージョン：
-■ 発生した操作/状況：
-■ 期待した動作：
-■ 実際の動作：
-■ スクショ/動画（任意）：
-      </pre>
-
-      <div class="faq">
-        <h3>よくある質問（FAQ）</h3>
-
-        <details>
-          <summary>広告が表示されません</summary>
-          <p class="muted">
-            回線状況や配信状況により表示できない場合があります。時間をおいて再度お試しください。
-          </p>
-        </details>
-
-        <details>
-          <summary>データは消えますか？</summary>
-          <p class="muted">
-            基本は端末内に保存されます。機種変更時の挙動はアプリごとに異なるため、必要ならお問い合わせください。
-          </p>
-        </details>
-
-        <details>
-          <summary>要望を送っていいですか？</summary>
-          <p class="muted">
-            もちろん歓迎です。実装可否は内容と優先度次第になりますが、全部ちゃんと読みます。
-          </p>
-        </details>
-      </div>
-    </div>
-    
-    <!-- Xrink -->
-    <a href="https://x.com/あなたのID" target="_blank" class="xbtn">
-    <img src="xicon.png" style="width:18px;vertical-align:middle;margin-right:6px;">
-    開発中の様子を見る
-    </a>
-
-    <!-- Privacy Section -->
-    <div class="section anchor" id="privacy">
-      <h2>プライバシーポリシー（簡易）</h2>
-      <p class="muted">
-        noburick realm は、アプリの改善のために広告配信および匿名の利用状況データを扱う場合があります。
-      </p>
-
-      <h3>取得する可能性のある情報</h3>
-      <ul>
-        <li>広告配信のためのデバイス情報（例：広告ID等）</li>
-        <li>クラッシュ情報・利用状況（匿名）</li>
+    <section class="section" id="features">
+      <h2>主な機能</h2>
+      <ul class="feature-list">
+        <li>25分集中 + 5分休憩のポモドーロタイマー</li>
+        <li>猫のリアクション演出でモチベーションをキープ</li>
+        <li>暖炉の環境音で落ち着く作業空間を演出</li>
+        <li>集中回数の記録で毎日の達成感を見える化</li>
       </ul>
+      <img src="assets/feature-focus-placeholder.png" alt="機能紹介画像（仮）" class="section__image">
+    </section>
 
-      <h3>利用目的</h3>
-      <ul>
-        <li>広告の表示、品質改善、不正防止</li>
-        <li>不具合調査、アプリ品質の向上</li>
-      </ul>
+    <section class="section" id="screenshots">
+      <h2>スクリーンショット</h2>
+      <div class="screenshot-grid">
+        <img src="assets/screenshot-01.png" alt="スクリーンショット1（仮）">
+        <img src="assets/screenshot-02.png" alt="スクリーンショット2（仮）">
+        <img src="assets/screenshot-03.png" alt="スクリーンショット3（仮）">
+      </div>
+    </section>
 
-      <h3>第三者提供</h3>
-      <p class="muted">
-        広告配信のために、Google AdMob 等の第三者サービスを利用する場合があります。
-      </p>
+    <section class="section" id="howto">
+      <h2>使い方</h2>
+      <ol class="howto-list">
+        <li>集中したいタスクを決めて「スタート」をタップ</li>
+        <li>25分間、猫と暖炉の演出といっしょに作業に集中</li>
+        <li>休憩時間は猫をタップしてリラックス</li>
+        <li>1日の集中回数を確認して習慣化を続ける</li>
+      </ol>
+    </section>
 
-      <h3>お問い合わせ</h3>
-      <p>
-        <a href="mailto:contact.nr.6@gmail.com">contact.nr.6@gmail.com</a>
-      </p>
+    <section class="section section--download" id="download">
+      <h2>ダウンロード</h2>
+      <p>ストア公開後、以下のボタンからダウンロードできます。</p>
+      <div class="download-buttons">
+        <a class="button button--store" href="#" aria-label="App Storeのダウンロードページ">App Store</a>
+        <a class="button button--store" href="#" aria-label="Google Playのダウンロードページ">Google Play</a>
+      </div>
+    </section>
 
-      <p class="muted">
-        ※正式な文面にしたい場合は、アプリごとの利用サービスに合わせて整備できます。
-      </p>
-    </div>
+    <section class="section section--privacy" id="privacy-policy">
+      <h2>プライバシーポリシー</h2>
+      <p>個人情報の取り扱いについては、以下をご確認ください。</p>
+      <p><a class="privacy-link" href="#privacy-policy">プライバシーポリシーを見る</a></p>
+    </section>
+  </main>
 
-  </div>
-
-  <footer>
-    &copy; 2025 noburick realm |
-    <a href="#support">サポート</a> |
-    <a href="#privacy">プライバシー</a> |
-    <a href="mailto:contact.nr.6@gmail.com">お問い合わせ</a>
+  <footer class="footer">
+    <nav>
+      <a href="#top">トップへ戻る</a>
+      <a href="#download">ダウンロード</a>
+      <a href="#privacy-policy">プライバシーポリシー</a>
+    </nav>
+    <p>© 2026 ねことも！ポモドーロ</p>
   </footer>
-
-  <!-- ワクワクボタンスクリプト -->
-  <script>
-    const WAKUWAKU_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyApOOP73_6ldWAPuDqmH8PQwO2gdUA6QXWTlpBdJ7ZPpZ9sRldOCY2En7iF08ZUQH4/exec'; // /exec!
-    const SECRET = 'sjd8f7sd98f7sd89f';
-
-    async function sendWakuwaku(appId) {
-      await fetch(WAKUWAKU_ENDPOINT, {
-        method: 'POST',
-        body: JSON.stringify({ appId, token: SECRET })
-      }).catch(()=>{});
-    }
-
-    document.addEventListener('click', async (e) => {
-      const btn = e.target.closest('.wakuwaku');
-      if (!btn) return;
-      const appId = btn.dataset.app;
-      const thanks = btn.nextElementSibling;
-
-      btn.disabled = true;
-      await sendWakuwaku(appId);
-      localStorage.setItem('wakuwaku_' + appId, '1');
-
-      btn.textContent = 'ワクワク済み';
-      if (thanks) thanks.style.display = 'inline';
-    });
-  </script>
 </body>
 </html>
