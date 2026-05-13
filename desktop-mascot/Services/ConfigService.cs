@@ -29,8 +29,9 @@ namespace DesktopMascot.Services
                     new JsonSerializerOptions { PropertyNameCaseInsensitive = true })
                     ?? new AppSettings();
             }
-            catch
+            catch (Exception ex) when (ex is JsonException or IOException)
             {
+                // 設定ファイルの読み込み・パース失敗時は空の設定を使用する
                 _cached = new AppSettings();
             }
 

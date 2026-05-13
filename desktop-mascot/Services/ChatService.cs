@@ -17,7 +17,8 @@ namespace DesktopMascot.Services
     {
         private const string ApiEndpoint = "https://api.openai.com/v1/chat/completions";
 
-        private readonly HttpClient _httpClient;
+        private static readonly HttpClient _httpClient = new();
+        private readonly string     _apiKey;
         private readonly string     _model;
 
         // Step 6: 会話履歴（システムプロンプト含む）
@@ -32,11 +33,8 @@ namespace DesktopMascot.Services
 
         public ChatService(string apiKey, string model = "gpt-4o-mini")
         {
-            _model = model;
-
-            _httpClient = new HttpClient();
-            _httpClient.DefaultRequestHeaders.Authorization =
-                new AuthenticationHeaderValue("Bearer", apiKey);
+            _apiKey = apiKey;
+            _model  = model;
 
             // システムプロンプトを会話履歴の先頭に追加 (Step 5)
             _history.Add(new ChatMessage
@@ -78,8 +76,12 @@ namespace DesktopMascot.Services
             var json    = JsonSerializer.Serialize(requestBody, JsonOptions);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-            // API 呼び出し
-            var httpResponse = await _httpClient.PostAsync(ApiEndpoint, content);
+            // API 呼び出し（リクエスト毎に Authorization ヘッダーを付与）
+            using var request = new HttpRequestMessage(HttpMethod.Post, ApiEndpoint);
+            request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", _apiKey);
+            request.Content = content;
+
+            var httpResponse = await _httpClient.SendAsync(request);
             httpResponse.EnsureSuccessStatusCode();
 
             var responseJson = await httpResponse.Content.ReadAsStringAsync();
@@ -99,7 +101,7 @@ namespace DesktopMascot.Services
                 if (chatResponse is not null && !string.IsNullOrWhiteSpace(chatResponse.Message))
                     return chatResponse;
             }
-            catch
+            catch (JsonException)
             {
                 // JSON パース失敗時はそのまま返答テキストとして扱う
             }
