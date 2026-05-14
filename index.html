@@ -3,84 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ねことも！ポモドーロ | 公式ホームページ</title>
-  <meta name="description" content="かわいい猫と暖炉に癒やされながら集中する、スマホ向けタイマーアプリ『ねことも！ポモドーロ』公式ホームページ。">
+  <title>noburick apps | アプリ一覧</title>
+  <meta name="description" content="noburick が公開するアプリの一覧ページです。">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="hero" id="top">
-    <div class="hero__content">
-      <p class="hero__eyebrow">猫といっしょに、あったか集中タイム。</p>
-      <h1>ねことも！ポモドーロ</h1>
-      <p class="hero__lead">暖炉のゆらぎと、かわいい猫たちに癒やされながら、25分の集中習慣をはじめよう。</p>
-      <div class="hero__cta">
-        <a class="button button--primary" href="#download">今すぐダウンロード</a>
-        <a class="button button--ghost" href="#features">主な機能を見る</a>
-      </div>
+  <header class="hero">
+    <div class="hero__inner">
+      <p class="hero__badge">noburick.github.io</p>
+      <h1>アプリ一覧</h1>
+      <p class="hero__lead">Steam風のダークUIで、公開中のアプリをまとめてチェックできます。</p>
     </div>
-    <img src="assets/hero-placeholder.png" alt="ねことも！ポモドーロのヒーロー画像（仮）" class="hero__image">
   </header>
 
-  <main>
-    <section class="section" id="about">
-      <h2>アプリ概要</h2>
-      <p>『ねことも！ポモドーロ』は、ポモドーロ・テクニックをやさしく続けられる集中サポートアプリです。作業中は暖炉の音と猫の見守り演出でほっとひと息、休憩時間は猫とのふれあいで気分転換できます。</p>
-      <img src="assets/app-overview-placeholder.png" alt="アプリ概要画像（仮）" class="section__image">
-    </section>
+  <main class="container" id="apps">
+    <section class="apps-grid" aria-label="アプリ一覧">
+      <article class="app-card">
+        <div class="app-card__thumb">
+          <img src="/uchi-neko.png" alt="ねことも！ポモドーロのアイコン">
+        </div>
+        <div class="app-card__body">
+          <h2>ねことも！ポモドーロ</h2>
+          <p>集中時間を猫と一緒に過ごすポモドーロタイマー</p>
+          <a class="button" href="/apps/nekotomo/">詳細を見る</a>
+        </div>
+      </article>
 
-    <section class="section" id="features">
-      <h2>主な機能</h2>
-      <ul class="feature-list">
-        <li>25分集中 + 5分休憩のポモドーロタイマー</li>
-        <li>猫のリアクション演出でモチベーションをキープ</li>
-        <li>暖炉の環境音で落ち着く作業空間を演出</li>
-        <li>集中回数の記録で毎日の達成感を見える化</li>
-      </ul>
-      <img src="assets/feature-focus-placeholder.png" alt="機能紹介画像（仮）" class="section__image">
-    </section>
-
-    <section class="section" id="screenshots">
-      <h2>スクリーンショット</h2>
-      <div class="screenshot-grid">
-        <img src="assets/screenshot-01.png" alt="スクリーンショット1（仮）">
-        <img src="assets/screenshot-02.png" alt="スクリーンショット2（仮）">
-        <img src="assets/screenshot-03.png" alt="スクリーンショット3（仮）">
-      </div>
-    </section>
-
-    <section class="section" id="howto">
-      <h2>使い方</h2>
-      <ol class="howto-list">
-        <li>集中したいタスクを決めて「スタート」をタップ</li>
-        <li>25分間、猫と暖炉の演出といっしょに作業に集中</li>
-        <li>休憩時間は猫をタップしてリラックス</li>
-        <li>1日の集中回数を確認して習慣化を続ける</li>
-      </ol>
-    </section>
-
-    <section class="section section--download" id="download">
-      <h2>ダウンロード</h2>
-      <p>ストア公開後、以下のボタンからダウンロードできます。</p>
-      <div class="download-buttons">
-        <a class="button button--store" href="#" aria-label="App Storeのダウンロードページ">App Store</a>
-        <a class="button button--store" href="#" aria-label="Google Playのダウンロードページ">Google Play</a>
-      </div>
-    </section>
-
-    <section class="section section--privacy" id="privacy-policy">
-      <h2>プライバシーポリシー</h2>
-      <p>個人情報の取り扱いについては、以下をご確認ください。</p>
-      <p><a class="privacy-link" href="#privacy-policy">プライバシーポリシーを見る</a></p>
+      <article class="app-card">
+        <div class="app-card__thumb">
+          <img src="/irasutoya-escape.png" alt="ふりむきミリオンキャットのアイコン">
+        </div>
+        <div class="app-card__body">
+          <h2>ふりむきミリオンキャット</h2>
+          <p>超低確率で猫が振り向くネコ運試しゲーム</p>
+          <a class="button" href="/apps/hurimuki/">詳細を見る</a>
+        </div>
+      </article>
     </section>
   </main>
 
   <footer class="footer">
-    <nav>
-      <a href="#top">トップへ戻る</a>
-      <a href="#download">ダウンロード</a>
-      <a href="#privacy-policy">プライバシーポリシー</a>
-    </nav>
-    <p>© 2026 ねことも！ポモドーロ</p>
+    <p>© 2026 noburick</p>
   </footer>
 </body>
 </html>
