@@ -120,10 +120,70 @@ h1 {
   font-size: clamp(1.1rem, 4.6vw, 1.4rem);
 }
 
+.app-card__body h2 small {
+  display: block;
+  font-size: 0.7em;
+  font-weight: 400;
+  color: var(--sub);
+  margin-top: 2px;
+}
+
 .app-card__body p {
   margin: 10px 0 14px;
   color: var(--sub);
   line-height: 1.7;
+}
+
+/* OS badges */
+.app-card__os {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0 0 14px;
+}
+
+.os-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  border: 1px solid transparent;
+}
+
+.os-badge--ios {
+  background: rgba(10, 132, 255, 0.18);
+  color: #6cb8ff;
+  border-color: rgba(10, 132, 255, 0.4);
+}
+
+.os-badge--android {
+  background: rgba(61, 220, 132, 0.18);
+  color: #5de5a8;
+  border-color: rgba(61, 220, 132, 0.4);
+}
+
+.os-badge--unavailable {
+  background: rgba(255, 255, 255, 0.04);
+  color: #5a6080;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Placeholder thumbnail when image is missing */
+.app-card__thumb--placeholder {
+  background: linear-gradient(145deg, #141d38, #0c1224);
+}
+
+.app-card__thumb--placeholder::before {
+  content: "📱";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  z-index: 0;
 }
 
 .button {
@@ -171,5 +231,11 @@ h1 {
 
   .app-card__body {
     padding: 18px;
+  }
+}
+
+@media (min-width: 1040px) {
+  .apps-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
