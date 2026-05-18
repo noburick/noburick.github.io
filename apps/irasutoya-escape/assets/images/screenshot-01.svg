@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1600" role="img" aria-labelledby="s1Title">
+  <title id="s1Title">スクリーンショット1 プレースホルダー</title>
+  <defs>
+    <linearGradient id="bg1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#21121f"/>
+      <stop offset="100%" stop-color="#130d14"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="1600" fill="url(#bg1)"/>
+  <rect x="85" y="120" width="730" height="1360" rx="28" fill="#1d151f" stroke="#5f4453" stroke-width="10"/>
+  <rect x="180" y="280" width="540" height="260" rx="20" fill="#2f202c" stroke="#946579" stroke-width="6"/>
+  <rect x="180" y="580" width="540" height="140" rx="18" fill="#bc3d57"/>
+  <rect x="180" y="760" width="540" height="140" rx="18" fill="#593244"/>
+  <rect x="180" y="940" width="540" height="140" rx="18" fill="#593244"/>
+  <text x="450" y="1410" text-anchor="middle" fill="#f2c8d3" font-size="54" font-family="'Noto Sans JP', sans-serif">Screenshot 01</text>
+</svg>

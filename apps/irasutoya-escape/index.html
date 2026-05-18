@@ -3,116 +3,97 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>いらすとやからの脱出 -もうひとつの結末を探して- | 公式ホームページ</title>
-  <meta name="description" content="いらすとや風の世界から脱出を目指す、もうひとつの結末が隠された短編脱出ゲーム。">
-  <style>
-    :root {
-      color-scheme: dark;
-      --bg: #0b1020;
-      --panel: #121a33;
-      --text: #e8edff;
-      --sub: #aab4d6;
-      --accent: #7c9bff;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      background: radial-gradient(circle at 20% 0%, #1a2550 0%, var(--bg) 56%);
-      color: var(--text);
-      font-family: "Hiragino Sans", "Noto Sans JP", "Yu Gothic", system-ui, -apple-system, sans-serif;
-      padding: 24px;
-    }
-    main {
-      width: min(100%, 720px);
-      background: linear-gradient(160deg, rgba(124, 155, 255, 0.12), rgba(18, 26, 51, 0.92));
-      border: 1px solid rgba(124, 155, 255, 0.32);
-      border-radius: 20px;
-      padding: 28px 24px;
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
-    }
-    .genre {
-      display: inline-block;
-      margin: 0 0 12px;
-      padding: 3px 10px;
-      border-radius: 999px;
-      font-size: 0.75rem;
-      font-weight: 700;
-      background: rgba(124, 155, 255, 0.18);
-      color: #a3b8ff;
-      border: 1px solid rgba(124, 155, 255, 0.4);
-    }
-    h1 {
-      margin: 0 0 8px;
-      font-size: clamp(1.5rem, 5vw, 2.1rem);
-      line-height: 1.3;
-    }
-    h1 small {
-      display: block;
-      font-size: 0.65em;
-      color: var(--sub);
-      font-weight: 400;
-      margin-top: 4px;
-    }
-    .lead {
-      margin: 12px 0 20px;
-      color: var(--sub);
-      line-height: 1.8;
-    }
-    .os-list {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin: 0 0 24px;
-    }
-    .os-badge {
-      display: inline-flex;
-      align-items: center;
-      padding: 4px 12px;
-      border-radius: 999px;
-      font-size: 0.78rem;
-      font-weight: 700;
-      border: 1px solid transparent;
-    }
-    .os-badge--ios {
-      background: rgba(10, 132, 255, 0.18);
-      color: #6cb8ff;
-      border-color: rgba(10, 132, 255, 0.4);
-    }
-    .coming-soon {
-      display: inline-block;
-      margin-bottom: 24px;
-      padding: 10px 16px;
-      border-radius: 12px;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      color: var(--sub);
-      font-size: 0.9rem;
-    }
-    a.back {
-      display: inline-block;
-      color: #fff;
-      background: var(--accent);
-      text-decoration: none;
-      font-weight: 700;
-      border-radius: 999px;
-      padding: 10px 18px;
-    }
-    a.back:hover { filter: brightness(1.1); }
-  </style>
+  <title>いらすとやからの脱出 -もうひとつの結末を探して- | 公式アプリ紹介</title>
+  <meta name="description" content="いらすとや素材で描かれる少し不気味な脱出ホラーゲーム『いらすとやからの脱出 -もうひとつの結末を探して-』公式アプリ紹介ページ。">
+  <meta name="keywords" content="いらすとや,脱出ゲーム,ホラーゲーム,スマホゲーム,エンディング分岐">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Noburick Apps">
+  <meta property="og:title" content="いらすとやからの脱出 -もうひとつの結末を探して-">
+  <meta property="og:description" content="この部屋には、もうひとつの結末がある。いらすとや素材で遊べるスマホ向け脱出ホラーゲーム。">
+  <meta property="og:url" content="https://noburick.github.io/apps/irasutoya-escape/">
+  <meta property="og:image" content="https://noburick.github.io/apps/irasutoya-escape/assets/images/ogp-cover.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#110d12">
+  <link rel="canonical" href="https://noburick.github.io/apps/irasutoya-escape/">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main>
-    <span class="genre">脱出ゲーム</span>
-    <h1>いらすとやからの脱出<small>-もうひとつの結末を探して-</small></h1>
-    <p class="lead">いらすとや風の世界から脱出を目指す、もうひとつの結末が隠された短編脱出ゲーム。<br>このページは現在準備中です。</p>
-    <div class="os-list">
-      <span class="os-badge os-badge--ios">iOS</span>
+  <header class="hero" id="top">
+    <div class="hero__content">
+      <p class="hero__eyebrow">スマホ向け脱出ホラーゲーム</p>
+      <h1>いらすとやからの脱出<br><span>-もうひとつの結末を探して-</span></h1>
+      <p class="hero__catch">この部屋には、もうひとつの結末がある。</p>
+      <p class="hero__lead">親しみあるいらすとや素材と、じわりと迫る不気味な演出。短時間で遊べるのに、真相へ進むほど深く引き込まれる脱出体験。</p>
+      <div class="hero__cta">
+        <a class="button button--store" href="https://example.com/app-store-url" aria-label="App Storeでダウンロード">App Store</a>
+        <a class="button button--store" href="https://example.com/google-play-url" aria-label="Google Playでダウンロード">Google Play</a>
+      </div>
     </div>
-    <p class="coming-soon">📢 詳細情報は公開準備中です。もうしばらくお待ちください。</p><br>
-    <a class="back" href="../../">アプリ一覧に戻る</a>
+    <img class="hero__image" src="assets/images/hero-app-image.svg" alt="いらすとやからの脱出のアプリイメージ">
+  </header>
+
+  <main>
+    <section class="section" id="about">
+      <h2>ゲーム紹介</h2>
+      <p>『いらすとやからの脱出 -もうひとつの結末を探して-』は、いらすとや素材を使ったスマホ向け脱出ホラーゲームです。エンディング分岐を搭載し、選択と行動によって結末が変化。通常エンドの先には、隠された“もうひとつの結末”が待っています。</p>
+      <p>不気味だけど遊びやすい雰囲気で、ホラーが苦手な方でも挑戦しやすいバランスに仕上げています。</p>
+    </section>
+
+    <section class="section" id="features">
+      <h2>特徴</h2>
+      <ul class="feature-cards">
+        <li class="feature-card">エンディング分岐</li>
+        <li class="feature-card">ヒント機能</li>
+        <li class="feature-card">短時間プレイ可能</li>
+        <li class="feature-card">不気味な演出</li>
+        <li class="feature-card">スマホ向け操作</li>
+      </ul>
+    </section>
+
+    <section class="section" id="screenshots">
+      <h2>スクリーンショット</h2>
+      <p>画像はあとから差し替えしやすいように <code>assets/images/</code> 配下から読み込んでいます。</p>
+      <div class="screenshot-gallery" role="list" aria-label="ゲームスクリーンショット一覧">
+        <img role="listitem" src="assets/images/screenshot-01.svg" alt="スクリーンショット1">
+        <img role="listitem" src="assets/images/screenshot-02.svg" alt="スクリーンショット2">
+        <img role="listitem" src="assets/images/screenshot-03.svg" alt="スクリーンショット3">
+      </div>
+    </section>
+
+    <section class="section" id="howto">
+      <h2>遊び方</h2>
+      <ol class="howto-list">
+        <li>部屋を調べる</li>
+        <li>アイテムを使う</li>
+        <li>謎を解く</li>
+        <li>真実へ近づく</li>
+      </ol>
+    </section>
+
+    <section class="section section--download" id="download">
+      <h2>ダウンロード</h2>
+      <p>ストアURLは公開時に差し替えてください。</p>
+      <div class="download-buttons">
+        <a class="button button--store" href="https://example.com/app-store-url" aria-label="App Storeのダウンロードページ">App Store</a>
+        <a class="button button--store" href="https://example.com/google-play-url" aria-label="Google Playのダウンロードページ">Google Play</a>
+      </div>
+    </section>
+
+    <section class="section section--privacy" id="privacy-policy">
+      <h2>Privacy Policy</h2>
+      <p>個人情報の取り扱いは以下をご確認ください。</p>
+      <p><a class="privacy-link" href="/privacy-policy.html">/privacy-policy.html</a></p>
+    </section>
   </main>
+
+  <footer class="footer">
+    <nav>
+      <a href="#top">トップへ戻る</a>
+      <a href="#download">ダウンロード</a>
+      <a href="/privacy-policy.html">Privacy Policy</a>
+      <a href="../../">アプリ一覧</a>
+    </nav>
+    <p>© 2026 いらすとやからの脱出</p>
+  </footer>
 </body>
 </html>
