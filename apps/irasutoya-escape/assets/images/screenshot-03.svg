@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1600" role="img" aria-labelledby="s3Title">
+  <title id="s3Title">スクリーンショット3 プレースホルダー</title>
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#23151a"/>
+      <stop offset="100%" stop-color="#100b10"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="1600" fill="url(#bg3)"/>
+  <rect x="85" y="120" width="730" height="1360" rx="28" fill="#191117" stroke="#60424a" stroke-width="10"/>
+  <rect x="180" y="270" width="540" height="370" rx="22" fill="#2c1e24" stroke="#a0737f" stroke-width="6"/>
+  <path d="M200 760H700L620 920H280Z" fill="#6f3d4d"/>
+  <rect x="180" y="980" width="540" height="250" rx="20" fill="#2d1d24" stroke="#7a5260" stroke-width="6"/>
+  <text x="450" y="1410" text-anchor="middle" fill="#f2c8d3" font-size="54" font-family="'Noto Sans JP', sans-serif">Screenshot 03</text>
+</svg>
