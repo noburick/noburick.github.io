@@ -490,6 +490,91 @@ h2 {
   margin-top: 16px;
 }
 
+/* ─── Android closed test section ─── */
+.section--android-test {
+  background: linear-gradient(135deg, #eefaf1, #f7fff2);
+  border-color: #bde3c6;
+}
+
+.android-test__headline {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 0 10px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: #d7f2df;
+  color: #1e6b34;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.android-test__headline::before {
+  content: "🤖";
+  line-height: 1;
+}
+
+.android-test-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.android-test-steps li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: #fff;
+  border: 1px solid #d9efde;
+  color: #2d4a35;
+  font-size: 0.93rem;
+}
+
+.android-test-step-num {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4caf66, #2f8f4b);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.86rem;
+}
+
+.android-test-buttons {
+  display: grid;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.button--android-test {
+  width: 100%;
+  justify-content: center;
+  padding: 14px 16px;
+  min-height: 52px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #2f8f4b, #1d6e37);
+  color: #fff;
+  box-shadow: 0 6px 16px rgba(47, 143, 75, 0.3);
+}
+
+.android-test-note {
+  margin: 12px 0 0;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 1px solid #d9efde;
+  color: #476451;
+  font-size: 0.86rem;
+}
+
 /* ─── Privacy section ─── */
 .privacy-link {
   color: var(--pink);
@@ -581,6 +666,10 @@ h2 {
 
   .download-buttons {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .android-test-buttons {
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .screenshot-item {
