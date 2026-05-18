@@ -515,37 +515,25 @@ h2 {
 }
 
 .android-test-steps {
-  list-style: none;
   margin: 0;
-  padding: 0;
+  padding-left: 1.5em;
   display: grid;
   gap: 10px;
 }
 
+.android-test-steps li::marker {
+  color: #2f8f4b;
+  font-weight: 700;
+}
+
 .android-test-steps li {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  margin: 0;
   padding: 10px 12px;
   border-radius: 12px;
   background: #fff;
   border: 1px solid #d9efde;
   color: #2d4a35;
   font-size: 0.93rem;
-}
-
-.android-test-step-num {
-  flex-shrink: 0;
-  width: 28px;
-  height: 28px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #4caf66, #2f8f4b);
-  color: #fff;
-  font-weight: 700;
-  font-size: 0.86rem;
 }
 
 .android-test-buttons {
@@ -569,7 +557,7 @@ h2 {
   margin: 12px 0 0;
   padding: 10px 12px;
   border-radius: 12px;
-  background: #ffffff;
+  background: var(--card);
   border: 1px solid #d9efde;
   color: #476451;
   font-size: 0.86rem;
