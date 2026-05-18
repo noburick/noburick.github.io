@@ -3,54 +3,253 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ふりむきミリオンキャット | 準備中</title>
-  <style>
-    :root {
-      color-scheme: dark;
-      --bg: #0b1020;
-      --panel: #121a33;
-      --text: #e8edff;
-      --sub: #aab4d6;
-      --accent: #7c9bff;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      background: radial-gradient(circle at 20% 0%, #1a2550 0%, var(--bg) 56%);
-      color: var(--text);
-      font-family: "Hiragino Sans", "Noto Sans JP", "Yu Gothic", system-ui, -apple-system, sans-serif;
-      padding: 24px;
-    }
-    main {
-      width: min(100%, 720px);
-      background: linear-gradient(160deg, rgba(124, 155, 255, 0.12), rgba(18, 26, 51, 0.92));
-      border: 1px solid rgba(124, 155, 255, 0.32);
-      border-radius: 20px;
-      padding: 24px;
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
-    }
-    h1 { margin: 0 0 12px; font-size: clamp(1.6rem, 5vw, 2.2rem); }
-    p { margin: 0; color: var(--sub); line-height: 1.8; }
-    a {
-      display: inline-block;
-      margin-top: 18px;
-      color: #fff;
-      background: var(--accent);
-      text-decoration: none;
-      font-weight: 700;
-      border-radius: 999px;
-      padding: 10px 16px;
-    }
-  </style>
+  <title>ふりむきミリオンキャット | 公式ホームページ</title>
+  <meta name="description" content="超低確率で猫が振り向く瞬間を待つカジュアルゲーム『ふりむきミリオンキャット』。BIG HIT演出・チラ見・またたびイベント・称号コレクションで楽しもう。">
+
+  <!-- OGP -->
+  <meta property="og:title" content="ふりむきミリオンキャット">
+  <meta property="og:description" content="振り向くか、振り向かないか。ただそれだけなのに、やめられない。超低確率の「BIG HIT」を目指して、今日も猫の背中を見つめよう。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://noburick.github.io/apps/hurimuki/">
+  <!-- OGP画像: assets/images/ogp.png を配置してください -->
+  <meta property="og:image" content="https://noburick.github.io/apps/hurimuki/assets/images/ogp.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+  <!-- ══════════════════════════════
+       HERO
+  ══════════════════════════════ -->
+  <header class="hero" id="top">
+    <!-- 装飾：キラキラ星と猫シルエット -->
+    <div class="hero__deco" aria-hidden="true">
+      <span class="deco-star deco-star--1">✦</span>
+      <span class="deco-star deco-star--2">✦</span>
+      <span class="deco-star deco-star--3">✦</span>
+      <span class="deco-cat">🐈</span>
+    </div>
+
+    <div class="hero__content">
+      <p class="hero__eyebrow">ネコ運試しカジュアルゲーム</p>
+      <h1>ふりむきミリオンキャット</h1>
+      <p class="hero__catch">振り向くか、振り向かないか。<br>ただそれだけなのに、やめられない。</p>
+      <p class="hero__lead">超低確率の「BIG HIT」を目指して、今日も猫の背中を見つめよう。</p>
+
+      <div class="hero__cta">
+        <!-- App Store: href を実際のURLに差し替えてください -->
+        <!-- 未公開の場合は button--coming-soon クラスを追加してください -->
+        <a class="button button--store" href="#download" aria-label="App Storeでダウンロード">
+          <span class="store-icon" aria-hidden="true">🍎</span> App Store
+        </a>
+        <!-- Google Play: href を実際のURLに差し替えてください -->
+        <a class="button button--store button--store--play" href="#download" aria-label="Google Playでダウンロード">
+          <span class="store-icon" aria-hidden="true">▶</span> Google Play
+        </a>
+      </div>
+    </div>
+
+    <!-- ヒーロー画像エリア -->
+    <!-- 画像が用意できたら <img> タグのコメントアウトを外し、placeholder を削除してください -->
+    <div class="hero__image-wrap">
+      <!-- <img src="assets/images/hero.png" alt="ふりむきミリオンキャット メイン画像" class="hero__image"> -->
+      <div class="hero__image-placeholder" aria-hidden="true">
+        <span class="cat-back">🐈</span>
+        <span class="sparkle sparkle--1">✨</span>
+        <span class="sparkle sparkle--2">✨</span>
+        <span class="sparkle sparkle--3">⭐</span>
+      </div>
+    </div>
+  </header>
+
   <main>
-    <h1>ふりむきミリオンキャット</h1>
-    <p>超低確率で猫が振り向く、ネコ運試しゲームページです。現在準備中です。</p>
-    <a href="../../">アプリ一覧に戻る</a>
+
+    <!-- ══════════════════════════════
+         ゲーム紹介
+    ══════════════════════════════ -->
+    <section class="section" id="about">
+      <h2>ゲーム紹介</h2>
+      <p class="section__lead">「ふりむきミリオンキャット」は、猫が振り向く瞬間をひたすら待ち続けるシンプルなカジュアルゲーム。でもただ待つだけじゃない。確率・前兆・称号・統計を楽しむ、深みのある体験があなたを待っています。</p>
+      <ul class="intro-list">
+        <li>🐱 <strong>猫が振り向く瞬間を待つ</strong>カジュアルゲーム</li>
+        <li>🌟 <strong>超低確率のBIG HIT演出</strong>でドキドキ</li>
+        <li>👀 前兆演出「<strong>チラ見</strong>」で期待感が高まる</li>
+        <li>🌿 <strong>またたびイベント</strong>で期待度が一時的にアップ</li>
+        <li>🏆 プレイ状況に応じた<strong>称号コレクション</strong></li>
+        <li>🔬 <strong>ラボ</strong>でタップ数・BIG HIT回数などの統計を確認</li>
+      </ul>
+    </section>
+
+    <!-- ══════════════════════════════
+         特徴
+    ══════════════════════════════ -->
+    <section class="section" id="features">
+      <h2>特徴</h2>
+      <div class="features-grid">
+
+        <!-- BIG HIT: ゴールドグロー＋キラキラ装飾 -->
+        <article class="feature-card feature-card--bighit">
+          <div class="feature-card__icon" aria-hidden="true">🌟</div>
+          <h3>BIG HIT</h3>
+          <p>超低確率の特別演出。めったに起きないからこそ、訪れた瞬間の感動はひとしお。</p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-card__icon" aria-hidden="true">👀</div>
+          <h3>チラ見演出</h3>
+          <p>振り向きそうで振り向かない前兆演出。チラ見が出たら期待度アップ！</p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-card__icon" aria-hidden="true">🌿</div>
+          <h3>またたびイベント</h3>
+          <p>一時的に期待度がアップする特別なチャンスタイム。このときを逃さず！</p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-card__icon" aria-hidden="true">🏆</div>
+          <h3>称号システム</h3>
+          <p>プレイ状況に応じてさまざまな称号を獲得。コレクションして楽しもう。</p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-card__icon" aria-hidden="true">🔬</div>
+          <h3>ラボ機能</h3>
+          <p>タップ数やBIG HIT回数などの統計データを確認。自分の記録を振り返ろう。</p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-card__icon" aria-hidden="true">👆</div>
+          <h3>シンプル操作</h3>
+          <p>片手で遊べるスマホ向け設計。どこでも気軽に楽しめます。</p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════
+         スクリーンショット
+    ══════════════════════════════ -->
+    <section class="section" id="screenshots">
+      <h2>スクリーンショット</h2>
+      <!-- 画像は apps/hurimuki/assets/images/ に配置してください -->
+      <div class="screenshot-scroll" role="list" aria-label="スクリーンショット一覧">
+        <div class="screenshot-item" role="listitem">
+          <img src="assets/images/screenshot-01.png" alt="スクリーンショット1" loading="lazy">
+        </div>
+        <div class="screenshot-item" role="listitem">
+          <img src="assets/images/screenshot-02.png" alt="スクリーンショット2" loading="lazy">
+        </div>
+        <div class="screenshot-item" role="listitem">
+          <img src="assets/images/screenshot-03.png" alt="スクリーンショット3" loading="lazy">
+        </div>
+        <div class="screenshot-item" role="listitem">
+          <img src="assets/images/screenshot-04.png" alt="スクリーンショット4" loading="lazy">
+        </div>
+      </div>
+      <p class="screenshot-hint" aria-hidden="true">← 横にスクロールできます →</p>
+    </section>
+
+    <!-- ══════════════════════════════
+         遊び方
+    ══════════════════════════════ -->
+    <section class="section" id="howto">
+      <h2>遊び方</h2>
+      <ol class="howto-list">
+        <li>
+          <span class="howto-num" aria-hidden="true">1</span>
+          <span class="howto-text">
+            <strong>猫をタップする</strong>
+            まずは猫の背中をタップしてみよう
+          </span>
+        </li>
+        <li>
+          <span class="howto-num" aria-hidden="true">2</span>
+          <span class="howto-text">
+            <strong>前兆演出を楽しむ</strong>
+            チラ見が出たら期待度アップ！
+          </span>
+        </li>
+        <li>
+          <span class="howto-num" aria-hidden="true">3</span>
+          <span class="howto-text">
+            <strong>またたびチャンスを狙う</strong>
+            期待度が上がる特別タイムを見逃すな
+          </span>
+        </li>
+        <li>
+          <span class="howto-num" aria-hidden="true">4</span>
+          <span class="howto-text">
+            <strong>BIG HITを待つ</strong>
+            超低確率の奇跡の瞬間をひたすら待て
+          </span>
+        </li>
+        <li>
+          <span class="howto-num" aria-hidden="true">5</span>
+          <span class="howto-text">
+            <strong>称号と統計を集める</strong>
+            あなたのプレイ記録をラボで確認しよう
+          </span>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ══════════════════════════════
+         ダウンロード
+    ══════════════════════════════ -->
+    <section class="section section--download" id="download">
+      <h2>ダウンロード</h2>
+      <p class="section__lead">今すぐプレイして、超低確率のBIG HITを体験しよう！</p>
+
+      <div class="download-buttons">
+        <!-- App Store: href を実際のURLに差し替えてください -->
+        <!-- 未公開の場合: button--coming-soon クラスを追加して href="#" のままにし、
+             下の coming-soon-note のコメントアウトを外してください -->
+        <a class="button button--download" href="#" aria-label="App Storeでダウンロード">
+          <span aria-hidden="true">🍎</span>
+          <span>
+            <small>Download on the</small>
+            App Store
+          </span>
+        </a>
+
+        <!-- Google Play: href を実際のURLに差し替えてください -->
+        <a class="button button--download button--download--play" href="#" aria-label="Google Playでダウンロード">
+          <span aria-hidden="true">▶</span>
+          <span>
+            <small>Get it on</small>
+            Google Play
+          </span>
+        </a>
+      </div>
+
+      <!-- 近日公開の場合は以下のコメントアウトを外してください -->
+      <!-- <p class="coming-soon-note">🐱 ストア公開まで、もうしばらくお待ちください！</p> -->
+    </section>
+
+    <!-- ══════════════════════════════
+         プライバシーポリシー
+    ══════════════════════════════ -->
+    <section class="section section--privacy" id="privacy">
+      <h2>プライバシーポリシー</h2>
+      <p>個人情報の取り扱いについては、以下をご確認ください。</p>
+      <p><a class="privacy-link" href="/privacy-policy.html">プライバシーポリシーを見る</a></p>
+    </section>
+
   </main>
+
+  <footer class="footer">
+    <nav class="footer__nav" aria-label="フッターナビゲーション">
+      <a href="#top">トップへ戻る</a>
+      <a href="#features">特徴</a>
+      <a href="#screenshots">スクリーンショット</a>
+      <a href="#download">ダウンロード</a>
+      <a href="/privacy-policy.html">プライバシーポリシー</a>
+      <a href="../../">アプリ一覧</a>
+    </nav>
+    <p>© 2026 ふりむきミリオンキャット</p>
+  </footer>
+
 </body>
 </html>
