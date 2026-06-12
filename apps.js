@@ -73,12 +73,26 @@ function getButtonLabel(app) {
   return "詳細";
 }
 
-function getUrlHost(href) {
-  try {
-    return new URL(href, window.location.href).host;
-  } catch {
-    return "";
+function getParsedUrl(href) {
+  if (!href) {
+    return null;
   }
+
+  try {
+    return new URL(href, window.location.href);
+  } catch (error) {
+    console.warn("Invalid app href:", href, error);
+    return null;
+  }
+}
+
+function getUrlHost(href) {
+  return getParsedUrl(href)?.host ?? "";
+}
+
+function isExternalUrl(href) {
+  const url = getParsedUrl(href);
+  return Boolean(url && url.origin !== window.location.origin);
 }
 
 function createAction(app) {
@@ -96,7 +110,7 @@ function createAction(app) {
   link.href = app.href;
   link.textContent = label;
 
-  if (/^https?:\/\//.test(app.href)) {
+  if (isExternalUrl(app.href)) {
     link.target = "_blank";
     link.rel = "noopener noreferrer";
   }
