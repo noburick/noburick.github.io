@@ -3,75 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>noburick realm apps | アプリ一覧</title>
-  <meta name="description" content="noburick が公開するアプリの一覧ページです。">
+  <title>Noburick Realm 作品カタログ</title>
+  <meta name="description" content="Noburick Realmの配信中・テスター募集中・開発中の作品をまとめたショーケースです。">
   <link rel="stylesheet" href="style.css">
+  <script src="apps.js" defer></script>
 </head>
 <body>
   <header class="hero">
     <div class="hero__inner">
-      <p class="hero__badge">noburick.github.io</p>
-      <h1>アプリ一覧</h1>
-      <p class="hero__lead">公開中のアプリをまとめてチェックできます。</p>
+      <p class="hero__badge">Noburick Realm</p>
+      <h1>作品カタログ</h1>
+      <p class="hero__lead">配信中の作品、テスター募集中の作品、開発中の作品をスマホでも見やすく一覧できます。</p>
+      <ul class="hero__status-list" aria-label="ステータス一覧">
+        <li class="status-badge status-badge--released">🟢 配信中</li>
+        <li class="status-badge status-badge--testing">🟡 テスター募集中</li>
+        <li class="status-badge status-badge--developing">🔵 開発中</li>
+      </ul>
     </div>
   </header>
 
-  <main class="container" id="apps">
-    <section class="apps-grid" aria-label="アプリ一覧">
-
-      <!-- ねことも！ポモドーロ -->
-      <article class="app-card">
-        <div class="app-card__thumb app-card__thumb--placeholder">
-          <p class="app-card__thumb-label">画像準備中</p>
-        </div>
-        <div class="app-card__body">
-          <h2>ねことも！ポモドーロ</h2>
-          <p>集中時間を猫と一緒に過ごすポモドーロタイマー</p>
-          <div class="app-card__os">
-            <span class="os-badge os-badge--ios">iOS</span>
-            <span class="os-badge os-badge--android">Android</span>
-          </div>
-          <a class="button" href="./apps/nekotomo/">詳細を見る</a>
-        </div>
-      </article>
-
-      <!-- ふりむきミリオンキャット -->
-      <article class="app-card">
-        <div class="app-card__thumb">
-          <img src="./hurimuki_1920_1080_hero.PNG" alt="ふりむきミリオンキャットのアイコン">
-        </div>
-        <div class="app-card__body">
-          <h2>ふりむきミリオンキャット</h2>
-          <p>超低確率で猫が振り向くネコ運試しゲーム</p>
-          <div class="app-card__os">
-            <span class="os-badge os-badge--unavailable">iOS</span>
-            <span class="os-badge os-badge--android">Android</span>
-          </div>
-          <a class="button" href="./apps/hurimuki/">詳細を見る</a>
-        </div>
-      </article>
-
-      <!-- いらすとやからの脱出 -->
-      <article class="app-card">
-        <div class="app-card__thumb">
-          <img src="./irasutoya_1920_1080_list.PNG" alt="いらすとやからの脱出のアイコン">
-        </div>
-        <div class="app-card__body">
-          <h2>いらすとやからの脱出<br><small>-もうひとつの結末を探して-</small></h2>
-          <p>いらすとや風の世界から脱出を目指す、もうひとつの結末が隠された短編脱出ゲーム。</p>
-          <div class="app-card__os">
-            <span class="os-badge os-badge--ios">iOS</span>
-            <span class="os-badge os-badge--unavailable">Android</span>
-          </div>
-          <a class="button" href="./apps/irasutoya-escape/">詳細を見る</a>
-        </div>
-      </article>
-
+  <main class="container">
+    <section class="catalog-section" aria-labelledby="catalog-title">
+      <div class="section-heading">
+        <p class="section-heading__eyebrow">Showcase</p>
+        <h2 id="catalog-title">作品一覧</h2>
+        <p class="section-heading__lead">カードの情報を追加するだけで、新しい作品を同じレイアウトで並べられます。</p>
+      </div>
+      <div class="apps-grid" id="apps" aria-label="作品一覧"></div>
     </section>
   </main>
 
+  <template id="app-card-template">
+    <article class="app-card">
+      <div class="app-card__body">
+        <p class="status-badge"></p>
+        <div class="app-card__thumb">
+          <img loading="lazy">
+        </div>
+        <div class="app-card__content">
+          <h3 class="app-card__title"></h3>
+          <p class="app-card__summary"></p>
+        </div>
+        <div class="app-card__actions"></div>
+      </div>
+    </article>
+  </template>
+
   <footer class="footer">
-    <p>© 2026 noburick realm </p>
+    <p>© 2026 Noburick Realm</p>
   </footer>
 </body>
 </html>
