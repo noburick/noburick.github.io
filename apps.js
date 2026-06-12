@@ -1,44 +1,50 @@
+const STATUS = Object.freeze({
+  released: "released",
+  testing: "testing",
+  developing: "developing"
+});
+
 const appCatalog = [
   {
     title: "ねことも！ポモドーロ",
     summary: "猫たちと一緒に集中時間を楽しむポモドーロタイマー",
-    status: "released",
+    status: STATUS.released,
     image: "./images/nekotomo-card.png",
     href: "./apps/nekotomo/"
   },
   {
     title: "いらすとやからの脱出",
     summary: "いらすとやの世界を探索する脱出ゲーム",
-    status: "released",
+    status: STATUS.released,
     image: "./images/irasutoya-card.png",
     href: "https://apps.apple.com/jp/app/id6747669718"
   },
   {
     title: "ふりむきミリオンキャット",
     summary: "振り向く猫を集めるカジュアルゲーム",
-    status: "testing",
+    status: STATUS.testing,
     image: "./images/millioncat-card.png",
     href: "./apps/hurimuki/"
   },
   {
     title: "ウチ猫冒険記",
     summary: "猫たちの大冒険が始まる",
-    status: "developing",
+    status: STATUS.developing,
     image: "./images/uchineko-card.png",
     href: ""
   }
 ];
 
 const statusMap = {
-  released: {
+  [STATUS.released]: {
     label: "🟢 配信中",
     className: "status-badge--released"
   },
-  testing: {
+  [STATUS.testing]: {
     label: "🟡 テスター募集中",
     className: "status-badge--testing"
   },
-  developing: {
+  [STATUS.developing]: {
     label: "🔵 開発中",
     className: "status-badge--developing"
   }
@@ -48,23 +54,31 @@ const appsRoot = document.querySelector("#apps");
 const template = document.querySelector("#app-card-template");
 
 function getButtonLabel(app) {
-  if (app.status === "testing") {
+  if (app.status === STATUS.testing) {
     return "詳細";
   }
 
-  if (app.status === "developing") {
+  if (app.status === STATUS.developing) {
     return "開発中";
   }
 
-  if (app.href.includes("apps.apple.com")) {
+  if (getUrlHost(app.href) === "apps.apple.com") {
     return "App Store";
   }
 
-  if (app.href.includes("play.google.com")) {
+  if (getUrlHost(app.href) === "play.google.com") {
     return "Google Play";
   }
 
   return "詳細";
+}
+
+function getUrlHost(href) {
+  try {
+    return new URL(href, window.location.href).host;
+  } catch {
+    return "";
+  }
 }
 
 function createAction(app) {
