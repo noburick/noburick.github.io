@@ -1,56 +1,198 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Noburick Realm 作品カタログ</title>
-  <meta name="description" content="Noburick Realmの配信中・テスター募集中・開発中の作品をまとめたショーケースです。">
-  <link rel="stylesheet" href="style.css">
-  <script src="apps.js" defer></script>
-</head>
-<body>
-  <header class="hero">
-    <div class="hero__inner">
-      <p class="hero__badge">Noburick Realm</p>
-      <h1>作品カタログ</h1>
-      <p class="hero__lead">配信中の作品、テスター募集中の作品、開発中の作品をスマホでも見やすく一覧できます。</p>
-      <ul class="hero__status-list" aria-label="ステータス一覧">
-        <li class="status-badge status-badge--released">🟢 配信中</li>
-        <li class="status-badge status-badge--testing">🟡 テスター募集中</li>
-        <li class="status-badge status-badge--developing">🔵 開発中</li>
-      </ul>
-    </div>
-  </header>
-
-  <main class="container">
-    <section class="catalog-section" aria-labelledby="catalog-title">
-      <div class="section-heading">
-        <p class="section-heading__eyebrow">Showcase</p>
-        <h2 id="catalog-title">作品一覧</h2>
-        <p class="section-heading__lead">カードの情報を追加するだけで、新しい作品を同じレイアウトで並べられます。</p>
-      </div>
-      <div class="apps-grid" id="apps" aria-label="作品一覧"></div>
-    </section>
-  </main>
-
-  <template id="app-card-template">
-    <article class="app-card">
-      <div class="app-card__body">
-        <p class="status-badge"></p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#faf5e9" />
+    <title>Noburick Realm — Small games, little adventures.</title>
+    <meta
+      name="description"
+      content="ゲームやアプリを、ひとつずつ。猫たちとの日常や、小さなアイデアから生まれた作品を作る個人開発レーベル、Noburick Realm。"
+    />
+    <meta property="og:title" content="Noburick Realm" />
+    <meta
+      property="og:description"
+      content="Small games, little adventures. ゲームやアプリを、ひとつずつ。"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://noburick.github.io/" />
+    <meta
+      property="og:image"
+      content="https://noburick.github.io/images/realm-hero.webp"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="preload"
+      as="image"
+      href="images/realm-hero.webp"
+      media="(min-width: 701px)"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="images/realm-hero-mobile.webp"
+      media="(max-width: 700px)"
+    />
+    <script src="apps.js" defer></script>
+    <script src="navigation.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">本文へ移動</a>
+    <header class="site-header" id="top">
+      <a class="brand" href="#top"
+        ><svg class="sprout" viewBox="0 0 40 40" aria-hidden="true">
+          <path d="M20 36C21 23 16 16 8 12M20 27C21 19 25 11 32 7" />
+          <path
+            d="M17 21C3 22 2 9 2 9S16 5 17 21ZM23 18C21 3 37 2 37 2S39 17 23 18Z"
+          /></svg
+        >Noburick Realm</a
+      >
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="site-nav"
+        aria-label="メニューを開く"
+        hidden
+      >
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="メインナビゲーション">
+        <a href="#works">作品一覧</a><a href="#about">開発について</a
+        ><a href="#journal">日々のこと</a>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero__inner">
+          <svg
+            class="sprout hero__sprout"
+            viewBox="0 0 40 40"
+            aria-hidden="true"
+          >
+            <path d="M20 36C21 23 16 16 8 12M20 27C21 19 25 11 32 7" />
+            <path
+              d="M17 21C3 22 2 9 2 9S16 5 17 21ZM23 18C21 3 37 2 37 2S39 17 23 18Z"
+            />
+          </svg>
+          <h1 id="hero-title">Noburick Realm</h1>
+          <p class="hero__tagline">Small games, little adventures.</p>
+          <p class="hero__lead">
+            ゲームやアプリを、ひとつずつ。<br />猫たちとの日常や、小さなアイデアから<br />生まれた作品を作っています。
+          </p>
+          <a class="button hero__button" href="#works"
+            >作品を見る <span aria-hidden="true">↓</span></a
+          >
+        </div>
+      </section>
+      <section
+        class="catalog-section container"
+        id="works"
+        aria-labelledby="catalog-title"
+      >
+        <div class="section-heading">
+          <p class="section-heading__eyebrow" aria-hidden="true">✤</p>
+          <h2 id="catalog-title">Our Works</h2>
+          <p>Noburick Realmの作品</p>
+        </div>
+        <div class="apps-grid" id="apps" aria-label="作品一覧"></div>
+        <noscript
+          ><p class="no-script">
+            作品の詳細はこちら：<a href="apps/nekotomo/"
+              >ねことも！ポモドーロ</a
+            >
+            ／ <a href="apps/irasutoya-escape/">いらすとやからの脱出</a> ／
+            <a href="apps/hurimuki/">ふりむきミリオンキャット</a
+            >。ウチ猫冒険記は開発中です。
+          </p></noscript
+        >
+      </section>
+      <section class="about container" id="about" aria-labelledby="about-title">
+        <div class="about__copy">
+          <div class="section-heading">
+            <p class="section-heading__eyebrow">About the Realm</p>
+            <h2 id="about-title">小さなアイデアから、<br />小さな世界へ。</h2>
+          </div>
+          <p>
+            Noburick Realmは、個人でゲームやアプリを<br
+              class="desktop-break"
+            />制作する小さな開発レーベルです。
+          </p>
+          <p class="about__quote">
+            「自分が使いたいもの」<br />「自分が遊んでみたいもの」
+          </p>
+          <p>そんな小さなきっかけから、作品を作っています。</p>
+          <p>
+            猫との暮らしだったり、オカヤドカリだったり、<br
+              class="desktop-break"
+            />ちょっと不思議な世界だったり。
+          </p>
+          <p>ここは、そんな作品たちが集まる<br />小さな Realm です。</p>
+        </div>
+        <img
+          class="about__art"
+          src="images/realm-workshop.webp"
+          alt="植物と本に囲まれた窓辺で、猫がひとやすみしている小さな工房"
+          loading="lazy"
+          width="1536"
+          height="1024"
+        />
+      </section>
+      <section class="journal" id="journal" aria-labelledby="journal-title">
+        <div class="journal__inner">
+          <p class="section-heading__eyebrow">A little note from us</p>
+          <h2 id="journal-title">From the Realm</h2>
+          <p>
+            開発中の作品や猫たちの日常、<br />ちょっとしたつぶやきを<br />Xで発信しています。
+          </p>
+          <a
+            class="button button--ink"
+            href="https://x.com/NoburickRealm"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><span aria-hidden="true">𝕏</span> Xで見る
+            <span aria-hidden="true">↗</span></a
+          >
+        </div>
+      </section>
+      <aside class="next-worlds container" aria-labelledby="next-title">
+        <span class="next-worlds__leaf" aria-hidden="true">❧</span>
+        <div>
+          <h2 id="next-title">これからの作品たち</h2>
+          <p>
+            ヤドログ、内猫怪異録、そしてまだ見ぬゲームたち…。<br />これからも、いろいろな世界を作っていきます。<br />次の冒険も、楽しみにしてもらえたら嬉しいです。
+          </p>
+        </div>
+      </aside>
+    </main>
+    <template id="app-card-template"
+      ><article class="app-card">
         <div class="app-card__thumb">
-          <img loading="lazy">
+          <img loading="lazy" width="640" height="360" />
         </div>
-        <div class="app-card__content">
-          <h3 class="app-card__title"></h3>
-          <p class="app-card__summary"></p>
-        </div>
-        <div class="app-card__actions"></div>
-      </div>
-    </article>
-  </template>
-
-  <footer class="footer">
-    <p>© 2026 Noburick Realm</p>
-  </footer>
-</body>
+        <div class="app-card__body">
+          <p class="status-badge"></p>
+          <div class="app-card__content">
+            <h3 class="app-card__title"></h3>
+            <p class="app-card__summary"></p>
+          </div>
+          <div class="app-card__actions"></div>
+        </div></article
+    ></template>
+    <footer class="footer">
+      <a class="brand" href="#top">Noburick Realm</a>
+      <p class="footer__tagline">Small games, little adventures.</p>
+      <nav aria-label="フッターナビゲーション">
+        <a href="#top">トップ</a><a href="#works">作品一覧</a
+        ><a href="#about">開発について</a
+        ><a
+          href="https://x.com/NoburickRealm"
+          target="_blank"
+          rel="noopener noreferrer"
+          >X ↗</a
+        >
+      </nav>
+      <p class="footer__copyright">© 2026 Noburick Realm</p>
+    </footer>
+  </body>
 </html>
