@@ -146,22 +146,21 @@ button {
   position: relative;
   min-height: 820px;
   background:
-    linear-gradient(180deg, #ffffff08 75%, var(--bg)),
-    url("images/realm-hero.webp") center bottom/cover no-repeat;
+    linear-gradient(180deg, transparent 82%, var(--bg)),
+    url("images/realm-hero-walk.webp") center center/cover no-repeat;
   text-align: center;
-  display: grid;
-  justify-items: center;
-  align-items: start;
 }
 .hero__inner {
   position: relative;
-  padding: 50px 20px 245px;
-  width: 100%;
+  width: 52%;
+  min-height: 820px;
+  margin-left: auto;
+  padding: 105px 40px 220px;
   background: radial-gradient(
-    ellipse at 50% 28%,
-    #fffdf58c 0%,
-    #fffdf536 40%,
-    transparent 68%
+    ellipse at 50% 26%,
+    #fffdf5d9 0%,
+    #fffdf588 38%,
+    transparent 72%
   );
 }
 .hero__sprout {
@@ -489,8 +488,26 @@ h1 {
 }
 @media (min-width: 1400px) {
   .hero {
-    background-size: 1400px auto;
     background-color: #f5f4dd;
+  }
+}
+@media (max-width: 900px) {
+  .hero {
+    min-height: auto;
+    padding-top: 56.28%;
+    background-image:
+      linear-gradient(180deg, transparent 82%, var(--bg)),
+      url("images/realm-hero-walk.webp");
+    background-position: center top;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+  }
+  .hero__inner {
+    width: 100%;
+    min-height: 0;
+    margin-left: 0;
+    padding: 38px 20px 70px;
+    background: var(--bg);
   }
 }
 @media (max-width: 700px) {
@@ -527,16 +544,8 @@ h1 {
   .site-nav[data-enhanced].is-open {
     display: flex;
   }
-  .hero {
-    min-height: 650px;
-    background-image:
-      linear-gradient(180deg, #ffffff08 75%, var(--bg)),
-      url("images/realm-hero-mobile.webp");
-    background-position: center bottom;
-    background-size: cover;
-  }
   .hero__inner {
-    padding: 44px 12px 210px;
+    padding: 30px 12px 56px;
   }
   .hero__sprout {
     width: 32px;
