@@ -1,7 +1,7 @@
 const STATUS = Object.freeze({
   released: "released",
   testing: "testing",
-  developing: "developing"
+  developing: "developing",
 });
 
 const appCatalog = [
@@ -10,44 +10,45 @@ const appCatalog = [
     summary: "猫たちと一緒に集中時間を楽しむポモドーロタイマー",
     status: STATUS.released,
     image: "./images/nekotomo-card.png",
-    href: "./apps/nekotomo/"
+    href: "./apps/nekotomo/",
   },
   {
     title: "いらすとやからの脱出",
     summary: "いらすとやの世界を探索する脱出ゲーム",
     status: STATUS.released,
     image: "./images/irasutoya-card.png",
-    href: "https://apps.apple.com/jp/app/id6747669718"
+    href: "https://apps.apple.com/jp/app/id6747669718",
+    detailHref: "./apps/irasutoya-escape/",
   },
   {
     title: "ふりむきミリオンキャット",
     summary: "振り向く猫を集めるカジュアルゲーム",
     status: STATUS.testing,
     image: "./images/millioncat-card.png",
-    href: "./apps/hurimuki/"
+    href: "./apps/hurimuki/",
   },
   {
     title: "ウチ猫冒険記",
-    summary: "猫たちの大冒険が始まる",
+    summary: "3匹の猫を切り替えて進む2Dアクション。猫たちの小さな冒険の物語。",
     status: STATUS.developing,
     image: "./images/uchineko-card.png",
-    href: ""
-  }
+    href: "",
+  },
 ];
 
 const statusMap = {
   [STATUS.released]: {
-    label: "🟢 配信中",
-    className: "status-badge--released"
+    label: "配信中",
+    className: "status-badge--released",
   },
   [STATUS.testing]: {
-    label: "🟡 テスター募集中",
-    className: "status-badge--testing"
+    label: "テスター募集中",
+    className: "status-badge--testing",
   },
   [STATUS.developing]: {
-    label: "🔵 開発中",
-    className: "status-badge--developing"
-  }
+    label: "開発中",
+    className: "status-badge--developing",
+  },
 };
 
 const appsRoot = document.querySelector("#apps");
@@ -55,11 +56,11 @@ const template = document.querySelector("#app-card-template");
 
 function getButtonLabel(app) {
   if (app.status === STATUS.testing) {
-    return "詳細";
+    return "詳細を見る";
   }
 
   if (app.status === STATUS.developing) {
-    return "開発中";
+    return "Coming Soon";
   }
 
   if (getUrlHost(app.href) === "apps.apple.com") {
@@ -70,7 +71,7 @@ function getButtonLabel(app) {
     return "Google Play";
   }
 
-  return "詳細";
+  return "詳細を見る";
 }
 
 function getParsedUrl(href) {
@@ -133,6 +134,13 @@ appCatalog.forEach((app) => {
   image.alt = `${app.title}の代表画像`;
   title.textContent = app.title;
   summary.textContent = app.summary;
+  if (app.detailHref) {
+    const detail = document.createElement("a");
+    detail.className = "button button--secondary";
+    detail.href = app.detailHref;
+    detail.textContent = "詳細を見る";
+    actions.append(detail);
+  }
   actions.append(createAction(app));
 
   appsRoot.append(fragment);
