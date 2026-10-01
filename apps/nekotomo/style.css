@@ -100,7 +100,7 @@ h1 {
 
 .hero__image {
   margin-top: 16px;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
 }
 
@@ -120,12 +120,6 @@ h2 {
 .section p {
   margin: 0;
   color: var(--sub);
-}
-
-.section__image {
-  margin-top: 14px;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
 }
 
 .feature-list,
@@ -148,8 +142,9 @@ h2 {
 }
 
 .screenshot-grid img {
-  aspect-ratio: 9 / 16;
-  object-fit: cover;
+  aspect-ratio: 239 / 110;
+  object-fit: contain;
+  background: #f7eadf;
 }
 
 .section--download p,
@@ -220,12 +215,11 @@ h2 {
     height: 100%;
   }
 
-  .hero__cta,
-  .download-buttons {
+  .hero__cta {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .screenshot-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+  .download-buttons {
+    max-width: 360px;
   }
 }
