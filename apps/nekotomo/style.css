@@ -142,9 +142,7 @@ h2 {
 }
 
 .screenshot-grid img {
-  aspect-ratio: 239 / 110;
-  object-fit: contain;
-  background: #f7eadf;
+  height: auto;
 }
 
 .section--download p,
