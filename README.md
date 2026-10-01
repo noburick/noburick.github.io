@@ -1,5 +1,7 @@
 # noburick.github.io
 
+トップページの構成、デザイン、作品データ、レスポンシブ表示、公開前確認については [`docs/HOMEPAGE_SPEC.md`](docs/HOMEPAGE_SPEC.md) を参照してください。
+
 ## GitHub Pages 公開手順
 
 1. GitHub のリポジトリ設定を開く
