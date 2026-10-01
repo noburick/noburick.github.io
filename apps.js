@@ -9,8 +9,10 @@ const appCatalog = [
     title: "ねことも！ポモドーロ",
     summary: "猫たちと一緒に集中時間を楽しむポモドーロタイマー",
     status: STATUS.released,
-    image: "./images/nekotomo-card.png",
-    href: "./apps/nekotomo/",
+    image: "./apps/nekotomo/assets/nekotomo-hero-1920x1080.PNG",
+    href:
+      "https://apps.apple.com/jp/app/%E3%81%AD%E3%81%93%E3%81%A8%E3%82%82-%E3%83%9D%E3%83%A2%E3%83%89%E3%83%BC%E3%83%AD/id6777685263",
+    detailHref: "./apps/nekotomo/",
   },
   {
     title: "いらすとやからの脱出",
