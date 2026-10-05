@@ -28,3 +28,11 @@
 - `images/realm-workshop.webp`: 植物、本、マグカップがある日差しの柔らかい窓辺で眠る猫。
 
 生成指示の共通条件：温かい水彩・ガッシュの絵本風、クリーム色と深緑、UI・文字・ロゴを含まない背景素材。
+
+## アクセス解析（Google Analytics 4）
+
+- 測定ID：`G-1MSWYBR5F8`
+- トップページと `apps/hurimuki/`、`apps/irasutoya-escape/`、`apps/nekotomo/` の各紹介ページに Google タグを設置しています。
+- 新しい紹介ページを追加するときは、既存ページと同じタグを `<head>` 直後に1回だけ追加してください。
+- GA4 の拡張計測で外部リンクのクリックを有効にすると、App Store・Google Play・X等へのクリックを `click` イベントとして集計できます。App Storeへの遷移は `link_domain = apps.apple.com` で絞り込みます。
+- 動作確認：公開サイトを開き、GA4 のリアルタイムレポートでアクセスを確認します。広告ブロッカー等により計測されない場合があります。
